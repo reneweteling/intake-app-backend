@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: intake
+  password: intake
+  pool: 5
+
+development:
+  <<: *default
+  database: intake-app-backend_development
+
+test:
+  <<: *default
+  database: intake-app-backend_test
+
+production:
+  <<: *default
+  database: intake-app-backend_production
+  username: intake-app-backend
+  password: <%= ENV['INTAKE-APP-BACKEND_DATABASE_PASSWORD'] %>
