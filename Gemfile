@@ -21,6 +21,11 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-font-awsome'
 end
 
+group :production do
+  gem 'rails_12factor'
+  gem 'puma'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
